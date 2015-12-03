@@ -76,7 +76,6 @@
               <a class="list-group-item" href="#textbox">Textbox</a>
               <a class="list-group-item" href="#checkbox">Checkbox</a>
               <a class="list-group-item" href="#dropdown">Dropdown Lists</a>
-              <a class="list-group-item" href="#submit">Submit</a>
             </div>
           </div>
           <div class="col-lg-9 col-md-9 col-sm-8">
@@ -101,6 +100,7 @@
                 <p>Here is a <a href="https://github.com/stovin/FormulationJSWebsite/archive/master.zip">download</a> link so you can have it locally on your computer.</p>
               </div>
             </div>
+            <hr />
             <h3 id="#">Form Definition</h3>
             <div class="panel panel-default">
               <div class="panel-heading">formDef.json</div>
@@ -150,8 +150,9 @@
                 </xemp></pre>
               </div>
             </div>
-
+            <hr />
             <h3 id="textbox">Textbox</h3>
+            <p>Render a textbox that will allow a user to type in an answer.</p>
             <br />
             <div class="panel panel-primary">
               <div class="panel-heading">
@@ -166,11 +167,11 @@ class Textbox extends React.Component {
   }
 
   render() {
-    var options = this.props.options;
+    var textbox = this.props.textbox;
     return (
       <div>
-        <label htmlFor={options.name}>{options.label}</label>
-        <!--<input type="text" id={options.id} name={options.name} defaultValue={options.value} />-->
+        <label htmlFor={textbox.name}>{textbox.label}</label>
+        <!--<input type="text" id={textbox.id} name={textbox.name} defaultValue={textbox.value} />-->
       </div>
     );
   }
@@ -180,7 +181,18 @@ export default Textbox;
                 </xmp></pre>
               </div>
             </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Rendered Component</h3>
+              </div>
+              <div class="panel-body">
+                <label>Textbox</label>
+                <input type="text" />
+              </div>
+            </div>
+            <hr />
             <h3 id="checkbox">Checkbox</h3>
+            <p>Allow for multiple answers to a questions using checkboxes.</p>
             <br />
             <div class="panel panel-primary">
               <div class="panel-heading">
@@ -224,7 +236,21 @@ export default Checkbox;
                 </xmp></pre>
               </div>
             </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Rendered Component</h3>
+              </div>
+              <div class="panel-body">
+                <label>Checkedbox</label>
+                <input type="checkbox" checked />
+                <br />
+                <label>Uncheckedbox</label>
+                <input type="checkbox" />
+              </div>
+            </div>
+            <hr />
             <h3 id="dropdown">Dropdown List</h3>
+            <p>Provide a long list of options to choose from.</p>
             <br />
             <div class="panel panel-primary">
               <div class="panel-heading">
@@ -258,15 +284,16 @@ export default Dropdown;
                 </xmp></pre>
               </div>
             </div>
-            <h3 id="submit">Submit</h3>
-            <br />
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title">Code</h3>
+                <h3 class="panel-title">Rendered Component</h3>
               </div>
               <div class="panel-body">
-                <pre><xmp>
-                </xmp></pre>
+                <select>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
               </div>
             </div>
           </div>
