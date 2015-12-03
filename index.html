@@ -1,0 +1,226 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bootswatch: Flatly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/custom.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "bootswatch.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+    <style type="text/css"></style>
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand">FormulationJs</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="index.html">Docs</a>
+            </li>
+            <li>
+              <a href="support.html">Support</a>
+            </li>
+            <li>
+              <a href="download.html">Download</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/codazen/" target="_blank">GitHub</a></li>
+            <li><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            <h1>Documentation</h1>
+            <p class="lead">Getting Started</p>
+            <div class="list-group table-of-contents">
+              <a class="list-group-item" href="#">Setting Up</a>
+            </div>
+            <p class="lead">Components</p>
+            <div class="list-group table-of-contents">
+              <a class="list-group-item" href="#textbox">Textbox</a>
+              <a class="list-group-item" href="#checkbox">Checkbox</a>
+              <a class="list-group-item" href="#dropdown">Dropdown Lists</a>
+              <a class="list-group-item" href="#submit">Submit</a>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-9 col-sm-8">
+            <h3 id="textbox">Setting Up</h3>
+            <p>There are a variety of ways to get FormulationJs started on your project.<p>
+            <div class="panel panel-default">
+              <div class="panel-heading">Cloning Git Repository</div>
+              <div class="panel-body">
+                <ol>
+                <li>Navigate to a directory of your choice.</li>
+                <li>Open up a git cmd.</li>
+                <li>git clone git@github.com:codazen/formulationjs.git</li>
+                <li>npm install</li>
+                <li>npm start</li>
+                </ol>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">Downloading Bundle Kit</div>
+              <div class="panel-body">
+                <p>Simply go to our <a href="download.html">download</a> and download the kit locally.</p>
+              </div>
+            </div>
+            <h3 id="textbox">Textbox</h3>
+            <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Code</h3>
+              </div>
+              <div class="panel-body">
+                <pre><xmp>
+class Textbox extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    var options = this.props.options;
+    return (
+      <div>
+        <label htmlFor={options.name}>{options.label}</label>
+        <!--<input type="text" id={options.id} name={options.name} defaultValue={options.value} />-->
+      </div>
+    );
+  }
+}
+
+export default Textbox;
+                </xmp></pre>
+              </div>
+            </div>
+            <h3 id="checkbox">Checkbox</h3>
+            <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Code</h3>
+              </div>
+              <div class="panel-body">
+                <pre><xmp>
+class Checkbox extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: this.props.checkbox.value
+    };
+    this._onChange = this._onChange.bind(this);
+    this._labelClick = this._labelClick.bind(this);
+  }
+
+  _onChange() {
+    this.setState({
+      checked: !this.state.checked
+    });
+  }
+
+  _labelClick() {
+    this._onChange();
+  }
+  
+  render() {
+    var checkbox = this.props.checkbox;
+    return (
+      <div>
+        <label htmlFor={checkbox.name} onClick={this._labelClick}>{checkbox.label}</label>
+        <input type="checkbox" checked={this.state.checked} name={checkbox.name} onChange={this._onChange}/>
+      </div>
+    );
+  }
+}
+
+export default Checkbox;
+                </xmp></pre>
+              </div>
+            </div>
+            <h3 id="dropdown">Dropdown List</h3>
+            <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Code</h3>
+              </div>
+              <div class="panel-body">
+                <pre><xmp>
+class Dropdown extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    var options = this.props.options;
+    return (
+      <div>
+        <select>
+          {
+            options.map(function (option, index) {
+              return <option key={index} value={option.value}>{option.name}</option>;
+            })
+          }
+        </select>
+      </div>
+    );
+  }
+}
+
+export default Dropdown;
+                </xmp></pre>
+              </div>
+            </div>
+            <h3 id="submit">Submit</h3>
+            <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Code</h3>
+              </div>
+              <div class="panel-body">
+                <pre><xmp>
+                </xmp></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+      </div>
+    </body>
