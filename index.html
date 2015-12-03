@@ -69,6 +69,7 @@
             <p class="lead">Getting Started</p>
             <div class="list-group table-of-contents">
               <a class="list-group-item" href="#">Setting Up</a>
+              <a class="list-group-item" href="#">Form Definition</a>
             </div>
             <p class="lead">Components</p>
             <div class="list-group table-of-contents">
@@ -79,7 +80,7 @@
             </div>
           </div>
           <div class="col-lg-9 col-md-9 col-sm-8">
-            <h3 id="textbox">Setting Up</h3>
+            <h3 id="#">Setting Up</h3>
             <p>There are a variety of ways to get FormulationJs started on your project.<p>
             <div class="panel panel-default">
               <div class="panel-heading">Cloning Git Repository</div>
@@ -99,6 +100,56 @@
                 <p>Simply go to our <a href="download.html">download</a> and download the kit locally.</p>
               </div>
             </div>
+            <h3 id="#">Form Definition</h3>
+            <div class="panel panel-default">
+              <div class="panel-heading">formDef.json</div>
+              <div class="panel-body">
+                <p>The form definition is composed of a JSON file with three fields. The first field "name" is a string. This acts as the title of the form. The second field "body" is a string that provides a small description of what the form is for. The third field "elements" holds all the information in order for FormulationJS to render the correct components. "Elements" is a list of indefinite objects.</p>
+                <p>FormulationJS currently supports three types of components: textbox, checkbox, and dropdown list. These are the objects presented inside of "Elements." All three components are objects that contain two fields: "type" and "data." "Type" is specific to the component name so it will be the name of the component.</p>
+                <p>"Type" is a string "textbox." The second field is "data," an object that holds "id," "name," "value," and "label" all of which are strings.</p>
+                <p>"Type" is a string "checkbox." "Data" is an object with a "name," and "label" which are strings, and a "value" which is a boolean.</p>
+                <p>"Type" is a string "dropdown." "Data" is a list of objects. Each object contains two fields: "name" and "value." "Name" is a string. "Value" is an integer.</p>
+                <pre><xemp>
+{
+  "name": "Form Title",
+  "body": "Form Description",
+  "elements": [
+    {
+      "type": "textbox",
+      "data": {
+        "id": "id",
+        "name": "name",
+        "value": "",
+        "label": "label"
+      }
+    },
+    {
+      "type": "checkbox",
+      "data": {
+        "name": "name",
+        "label": "label",
+        "value": boolean
+      }
+    },
+    {
+      "type": "dropdown",
+      "data": [
+        {
+          "name": "name",
+          "value": 1
+        },
+        {
+          "name": "name",
+          "value": 2,
+        }
+      ]
+    }
+  ]
+}
+                </xemp></pre>
+              </div>
+            </div>
+
             <h3 id="textbox">Textbox</h3>
             <br />
             <div class="panel panel-primary">
