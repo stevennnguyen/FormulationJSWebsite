@@ -103,6 +103,170 @@
             <div class="panel panel-default">
               <div class="panel-heading">formDef.json</div>
               <div class="panel-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Form</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>The name of the form. Displays at the top of the form.</td>
+                    </tr>
+                    <tr>
+                      <td>body</td>
+                      <td><i>string</i></td>
+                      <td>The description of the form. Renders below the form name.</td>
+                    </tr>
+                    <tr>
+                      <td>elements</td>
+                      <td><i>Object Array</i></td>
+                      <td>List of form elements that will be rendered in the form.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Element Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>type</td>
+                      <td><i>string</i></td>
+                      <td>The type of form element we want to render. Currently supports 'textbox', 'checkbox', or 'dropdown'.</td>
+                    </tr>
+                    <tr>
+                      <td>data</td>
+                      <td><i>Object</i></td>
+                      <td>Attributes to render our form element. Object will vary depending on the element type.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Textbox Data Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>id</td>
+                      <td><i>string</i></td>
+                      <td>A unique id for the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>Name attribute for the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>string</i></td>
+                      <td>The initial value of the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>label</td>
+                      <td><i>string</i></td>
+                      <td>A label rendered adjacent to the text input.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Checkbox Data Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>Name attribute for the checkbox input.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>boolean</i></td>
+                      <td>The initial value of the checkbox input.</td>
+                    </tr>
+                    <tr>
+                      <td>label</td>
+                      <td><i>string</i></td>
+                      <td>A label rendered adjacent to the checkbox input.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Dropdown Data Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>options</td>
+                      <td><i>Object Array</i></td>
+                      <td>An array of the different options in the dropdown element.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>string | int</i></td>
+                      <td>The initial value of the dropdown element. Any option that matches this value will be selected by default when the dropdown renders.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Dropdown Options Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>Text that will be displayed for a dropdown option.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>string | int</i></td>
+                      <td>The actual value passed when selecting this option.</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <p>The form definition is composed of a JSON file with three fields. The first field "name" is a string. This acts as the title of the form. The second field "body" is a string that provides a small description of what the form is for. The third field "elements" holds all the information in order for FormulationJS to render the correct components. "Elements" is a list of indefinite objects.</p>
                 <p>FormulationJS currently supports three types of components: textbox, checkbox, and dropdown list. These are the objects presented inside of "Elements." All three components are objects that contain two fields: "type" and "data." "Type" is specific to the component name so it will be the name of the component.</p>
                 <p>"Type" is a string "textbox." The second field is "data," an object that holds "id," "name," "value," and "label" all of which are strings.</p>
